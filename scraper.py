@@ -18,20 +18,13 @@ uname = driver.find_element_by_name('LoginControl1$txtUsername')
 password = driver.find_element_by_name('LoginControl1$txtPassword')
 login_btn = driver.find_element_by_name('LoginControl1$btnLogin')
 
-q = input('Are you Tim U? [y/n]')
-if q.startswith('y'):
-    uname.send_keys('Tuzoegbu')
-    password.send_keys('Cheeze10')
-    login_btn.click()
-else:
-    q2 = input('Student Portal username...')
-    q3 = input('Student Portal passworrd...')
-    uname.send_keys(q2)
-    password.send_keys(q3)
-    login_btn.click()
+q2 = input('Student Portal username...')
+q3 = input('Student Portal passworrd...')
+uname.send_keys(q2)
+password.send_keys(q3)
+login_btn.click()
 
-
-timeout = 3
+timeout = 8
 WebDriverWait(driver, timeout).until(EC.visibility_of_element_located((By.XPATH, "//table[@class='rgMasterTable rgClipCells']")))
 
 class_names1 = driver.find_elements_by_xpath("//tr[@class='rgRow']")
@@ -137,13 +130,6 @@ try:
 except:
     pass
 
-
-
-
-
-
-
-
 try:
     class1_code = class_codes[0]
     class1_name = class1.split(class1_code)[0]
@@ -194,18 +180,15 @@ try:
     class10_name = class10.split(class10_code)[0]
 except:
     pass
-
 try:        
     d = len(denominator)
     n = functools.reduce(lambda x,y: x+y, denominator)
 except:
     pass
-
 try:
     average = round(n/d, 2)
 except:
     pass
-
 
 data_1 = open("C:\\Users\\Tim\\PP\\one.txt", "r")
 data11 = float(data_1.read().split(',')[-3])
@@ -242,7 +225,6 @@ avg_data = open("C:\\Users\\Tim\\PP\\avg.txt", "r")
 avg_data1 = float(avg_data.read().split(',')[-3])
 avg_data.close()
 
-
 def good_bad(last_grade, current_grade):
     if last_grade == current_grade:
         print('+0')
@@ -250,8 +232,6 @@ def good_bad(last_grade, current_grade):
         print('+', str(current_grade - last_grade))
     elif current_grade < last_grade:
         print('-', str(last_grade - current_grade))
-
-
 
 space = '       '
 print(space)
