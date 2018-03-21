@@ -1,0 +1,2 @@
+# MHS-Student-Portal-Scraper
+This program uses the selenium module to create a headless Chrome WebDriver and find the reported and current grades for up to ten classes for MHS students. The program also calculates the students current average and compares the current grades to the grades that were recorded onto a .txt database. You will need to enter the file location in order for the program to refrence these .txt files.
